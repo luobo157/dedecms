@@ -1,0 +1,289 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml">
+<head>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--
+<meta name="mobile-agent" content="format=html5;url=http://m.fangxiaoyang.cn/" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.fangxiaoyang.cn/" >
+-->
+
+{dede:include filename="head-css.htm"/}
+
+
+
+</head>
+<body>
+
+{dede:include filename="head.htm"/}
+
+
+
+<style type="text/css">
+    .main{
+    width: 1200px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    clear: both;
+    background-color: #fff;
+    }
+    .container{
+    padding-left: 0px;
+}
+.searchTop{
+    background: #fff;
+    height: 64px;
+    line-height: 64px;
+    border: 1px solid #ddd;
+    width: 1198px;
+    z-index: 3;
+    position: relative;
+}
+.xuanze{
+	border-top-color: #fff;
+	height: 180px;
+	line-height: 44px;
+}
+.xuanze ul{
+	height: 45px;
+	border-bottom: 1px solid #f4f4f4;
+	margin-left: 40px;
+}
+.xuanze ul li{
+	display:inline-block;
+	margin-right: 10px;
+}
+.xuanze ul a{
+	margin-right: 10px;
+}
+.xuanze ul span{
+	margin-right: 10px;
+	color: #0074e4;
+    font-weight: bold;
+}
+.jieguo{
+	margin-top: 50px;
+	padding-left: 0px;
+}
+.jieguo-a{
+	background: #217fff;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 5px 12px 5px;
+    font-weight: 500;
+}
+.jieguo-b{
+	border-top: 1px solid #ddd;
+	padding: 20px 0px 20px 0px;
+	margin-top: 10px;
+	max-width: 930px;
+}
+.tilte-a{
+	font-size: 24px;
+    font-weight: 600;
+}
+.title-b{
+	background: #217fff;
+	color: #fff;
+	border-radius: 3px;
+    padding: 0 6px;
+    margin-left: 10px;
+}
+.p-p1{
+	margin-top: 10px;
+}
+.span1{
+	color: #999;
+	font-size: 14px;
+}
+.span2{
+	color: #465671;
+    background-color: #f8f8f8;
+    padding: 2px 10px;
+    margin-right: 5px;
+}
+.span3{
+	color: #ff4803;
+    font-size: 26px;
+    float: right;
+}
+.px470{
+	margin-left: 470px;
+	font-size: 16px;
+}
+.span4{
+	height: 28px;
+    margin-right: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-block;
+    color: #33be82;
+    background-color: #e1f6ec;
+}
+</style>
+
+
+
+<div class="main">
+<!--面包屑导航-->
+    <div class="crumbs">
+        <a href="/">首页</a>&nbsp;&gt;&nbsp;<a href="/">深圳</a>&nbsp;&gt;&nbsp;<a href="/">宝安</a>
+    </div>
+    <div class="searchTop">
+        <div class="tSch2" style="position: absolute;left: 40px;top: 12px;height: 40px;margin: 0px;">
+            <span class="tSchBox2">
+                <span style="float: left;background-color: #fff;">
+                    <form name="searchform" method="post" id="searchform" class="searchform" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+<!--
+                            <input type="hidden" name="tbname" value="news">
+                            <input type="hidden" name="tempid" value="1">
+                            <input type="hidden" name="show" value="title">
+                            <input type="hidden" name="hh" value="LK">
+-->
+                            <input name="q"  type="text" id="search-keyword" class="text tSchText" value="" placeholder="请输入楼盘/地址/楼盘特色" style="border:1px solid #ddd;height: 38px;line-height: 38px;width:490px;border-top-left-radius: 3px;border-bottom-left-radius: 3px;" onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}">
+                            <button type="submit" class="hbIconMoon tSchBtn2" style="height: 40px;line-height: 40px;margin-right: 258px;width:88px;border-top-right-radius: 3px;border-bottom-right-radius: 3px;"><img src="/skin/pic/sea_btn1.png"></button>
+                    </form>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div class="searchTop xuanze">
+{dede:php}AddFilter(17,1,"diqu,jiage,jushi,leixing",2,1);{/dede:php}
+	</div>
+<!--
+    <div class="searchTop xuanze">
+    	<ul>
+    		<li>区域	</li>
+    		<li>不限	</li>
+    		<li>石岩	</li>
+    		<li>沙井	</li>
+    		<li>西乡	</li>
+    		<li>福永</li>
+    		<li>松岗	</li>
+    		<li>宝安中心</li>
+    	</ul>
+    	<ul>
+    		<li>区域	</li>
+    		<li>不限	</li>
+    		<li>石岩	</li>
+    		<li>沙井	</li>
+    		<li>西乡	</li>
+    		<li>福永</li>
+    		<li>松岗	</li>
+    		<li>宝安中心</li>
+    	</ul>
+    	<ul>
+    		<li>区域	</li>
+    		<li>不限	</li>
+    		<li>石岩	</li>
+    		<li>沙井	</li>
+    		<li>西乡	</li>
+    		<li>福永</li>
+    		<li>松岗	</li>
+    		<li>宝安中心</li>
+    	</ul>
+    	<ul>
+    		<li>区域	</li>
+    		<li>不限	</li>
+    		<li>石岩	</li>
+    		<li>沙井	</li>
+    		<li>西乡	</li>
+    		<li>福永</li>
+    		<li>松岗	</li>
+    		<li>宝安中心</li>
+    	</ul>
+    </div>
+-->
+    <div class="container">
+        <div class="row">            
+            <div class="col-md-9 jieguo">
+            	<div><a class="jieguo-a" href="">宝安小产权楼盘</a></div>
+
+
+
+
+
+{dede:list pagesize='10' titlelen='30' addfields='diqu,jiage,jushi,leixing' channelid='17'}
+            	<div class="container jieguo-b">
+            		<div class="row">
+            			<div id="zhanxian">
+	            			<div class="col-md-4">
+	            				<img src="[field:picname/]" alt="" class="img-responsive" >
+	            			</div>
+	            			<div class="col-md-8">
+	            				<p>
+	            					<a class="tilte-a" href="[field:arcurl/]" title="">[field:title/]</a>
+	            					<span class="title-b">在售</span>
+	            				</p>
+	            				<p class="p-p1">
+	            					<span class="span1">户型:</span>
+<!--在内容页独立调用多个checkbox多选框内容-->                            
+[field:jushi runphp=yes]
+$arr = explode(',',@me);
+$result = '';
+for($index=0;$index<count($arr);$index++){
+    $result .= "<span class='span2'>$arr[$index]</span>";
+}
+@me = $result;
+[/field:jushi]
+<!--在内容页独立调用多个checkbox多选框内容-->  
+	            					<span class="span3">[field:jiage/]元/㎡</span>
+	            				</p>
+	            				<p class="p-p1">
+	            					<span class="span1">[field:diqu/]</span>
+
+	            					<span class="span1 px470">18126401370</span>
+	            				</p>
+	            				<p>
+	            					<span class="span4">[field:leixing/]</span>
+	            				</p>
+	            			</div>
+	            		</div>
+            		</div>
+            	</div>
+{/dede:list}
+
+{dede:pagelist listsize='4'/}  
+
+
+            </div>
+            <div class="col-md-3">
+{dede:include filename="bangnizhaofang.htm"/}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 底部楼盘-->
+{dede:include filename="footer-loupan.htm"/}
+<!-- 底部楼盘end-->
+
+
+
+<!-- 底部版权-->
+{dede:include filename="footer.htm"/}
+<!-- 底部版权end-->
+
+
+
+
+
+</body>
+
+{dede:include filename="footer-js.htm"/}
+
+</html>
+
+
