@@ -80,7 +80,8 @@ function AddFilter($channelid, $type=1, $fieldsnamef, $defaulttid, $toptid=0, $l
                 $href1 = explode($ctag->GetName().'=', $filterarr);
 				$href2 = explode('&', $href1[1]);
 				$fields_value = $href2[0];
-				$dede_addonfields .= '<b>'.$ctag->GetAtt('itemname').'：</b>';
+				//$dede_addonfields .= '<b>'.$ctag->GetAtt('itemname').'：</b>';
+				$dede_addonfields .= '<ul>';
 				switch ($type) {
 					case 1:
 						$dede_addonfields .= (preg_match("/&".$ctag->GetName()."=/is",$filterarr,$regm) ? '<a title="全部" href="'.str_replace("&".$ctag->GetName()."=".$fields_value,"",$filterarr).'">全部</a>' : '<span>全部</span>').'&nbsp;';
@@ -91,7 +92,7 @@ function AddFilter($channelid, $type=1, $fieldsnamef, $defaulttid, $toptid=0, $l
 							$href = stripos($filterarr,$ctag->GetName().'=') ? str_replace("=".$fields_value,"=".urlencode($addonfields_items[$i]),$filterarr) : $filterarr.'&'.$ctag->GetName().'='.urlencode($addonfields_items[$i]);//echo $href;
 							$dede_addonfields .= ($fields_value!=urlencode($addonfields_items[$i]) ? '<a title="'.$addonfields_items[$i].'" href="'.$href.'">'.$addonfields_items[$i].'</a>' : '<span>'.$addonfields_items[$i].'</span>')."&nbsp;";
 						}
-						$dede_addonfields .= '<br/>';
+						$dede_addonfields .= '</ul>';
 					break;
 					
 					case 2:
