@@ -1,0 +1,21 @@
+<!--1、在dede:artlist和dede:list标签中调用代码如下：-->
+
+[field:自定义字段 runphp=yes]
+$arr = explode(',',@me);
+$result = '';
+for($index=0;$index<count($arr);$index++){
+    $result .= "<span class='dededao'>$arr[$index]</span>";
+}
+@me = $result;
+[/field:自定义字段]
+
+<!--2、在内容页模板中调用代码如下：-->
+
+{dede:field.自定义字段 runphp=yes}
+$arr = explode(',',@me);
+$result = '';
+for($index=0;$index<count($arr);$index++){
+    $result .= "<span class='dededao'>$arr[$index]</span>";
+}
+@me = $result;
+{/dede:field.自定义字段}
