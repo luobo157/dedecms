@@ -1,0 +1,62 @@
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+  <input type="hidden" name="action" value="post">
+  <input type="hidden" name="diyid" value="1">
+  <input type="hidden" name="do" value="2">
+  <table style="width:97%;" cellpadding="0" cellspacing="1">
+    <tbody>
+      <tr>
+      <td align="right" valign="top">意向区域：</td>
+        <td>
+          <select name="yixiangquyu" style="width:150px"><option value="不限">不限</option>
+            <option value="宝安">宝安</option>
+            <option value="光明">光明</option>
+            <option value="龙华">龙华</option>
+            <option value="龙岗">龙岗</option>
+            <option value="坪山">坪山</option>
+            <option value="关内">关内</option>
+            <option value="东莞">东莞</option>
+            <option value="惠州">惠州</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">意向楼盘：</td>
+        <td>
+          <input type="text" name="yixiangloupan" id="yixiangloupan" style="width:250px" class="intxt" value="">
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">预算总价：</td>
+        <td>
+          <select name="yusuanzongjia" style="width:150px"><option value="100万以下">100万以下</option>
+            <option value="100-200万">100-200万</option>
+            <option value="200-300万">200-300万</option>
+            <option value="300-400万">300-400万</option>
+            <option value="400-500万">400-500万</option>
+            <option value="500-600万">500-600万</option>
+            <option value="600万以上">600万以上</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">姓名：</td>
+        <td>
+          <input type="text" name="xingming" id="xingming" style="width:250px" class="intxt" value="">
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">手机号码：</td>
+        <td>
+          <input type="text" name="shoujihaoma" id="shoujihaoma" style="width:100px" class="intxt" value="0"> (填写数值)
+        </td>
+      </tr>
+      <input type="hidden" name="dede_fields" value="yixiangquyu,select;yixiangloupan,text;yusuanzongjia,select;xingming,text;shoujihaoma,int">
+      <input type="hidden" name="dede_fieldshash" value="38c1240485b202635e49e7f1a530cf8b">
+    </tbody>
+  </table>
+  <div align="center" style="height:30px;padding-top:10px;">
+    <input type="submit" name="submit" value="提 交" class="coolbg">
+    &nbsp;
+    <input type="reset" name="reset" value="重 置" class="coolbg">
+  </div>
+</form>
